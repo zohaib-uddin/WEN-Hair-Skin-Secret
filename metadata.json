@@ -1,0 +1,6 @@
+{
+  "name": "Wen Hair & Skin Secret",
+  "description": "Luxury Ayurvedic and Scientific Beauty formulations for hair and skin, tailored for the Pakistan market.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
