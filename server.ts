@@ -50,7 +50,7 @@ async function safeProfileUpdate(supabaseAdmin: any, payload: any, matchColumn: 
 
 async function startServer() {
   const app = express();
-  const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
   // 1. Health check route
   app.get("/api/health", (req, res) => {
@@ -3012,14 +3012,14 @@ async function startServer() {
       return res.status(500).json({ error: err.message });
     }
   });
-  if (process.env.NODE_ENV !== "production") {
+if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: "spa",
     });
     app.use(vite.middlewares);
   } else {
-    // Hostinger path fix: Check if __dirname is already the dist folder
+    // Hostinger ke liye path ki logic
     const distPath = __dirname.endsWith('dist') ? __dirname : path.join(__dirname, 'dist');
     app.use(express.static(distPath));
     app.get('*', (req, res) => {
