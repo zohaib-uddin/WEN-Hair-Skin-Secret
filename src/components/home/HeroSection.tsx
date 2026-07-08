@@ -75,7 +75,7 @@ const slides = [
   }
 ];
 
-// Premium smooth animations
+// Premium smooth animations with subtle zoom-in
 const variants = {
   enter: (direction: number) => ({
     x: direction > 0 ? 1000 : -1000,
@@ -86,11 +86,11 @@ const variants = {
     zIndex: 1,
     x: 0,
     opacity: 1,
-    scale: 1,
+    scale: 1.02,
     transition: {
       x: { type: "spring", stiffness: 300, damping: 30 },
       opacity: { duration: 0.8 },
-      scale: { duration: 0.8 }
+      scale: { duration: 1.2, ease: "easeOut" }
     }
   },
   exit: (direction: number) => ({
@@ -100,8 +100,8 @@ const variants = {
     scale: 0.95,
     transition: {
       x: { type: "spring", stiffness: 300, damping: 30 },
-      opacity: { duration: 0.8 },
-      scale: { duration: 0.8 }
+      opacity: { duration: 0.6 },
+      scale: { duration: 0.6 }
     }
   })
 };
@@ -136,7 +136,7 @@ export const HeroSection: React.FC = () => {
 
   if (productsLoading) {
     return (
-      <section className="relative w-full h-screen bg-[#F7F2EA] flex items-center justify-center">
+      <section className="relative w-full bg-[#F7F2EA] flex items-center justify-center aspect-[21/9] md:aspect-auto md:h-[80vh]">
         <div className="animate-pulse flex flex-col items-center">
           <div className="w-[40px] h-[40px] border-[4px] border-[#C9A227] border-t-transparent rounded-full animate-spin"></div>
         </div>
@@ -146,12 +146,13 @@ export const HeroSection: React.FC = () => {
 
   return (
     <section
-      className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden bg-black"
+      className="relative w-full md:h-[80vh] overflow-hidden bg-black"
       id="hero-luxury-section"
       role="region"
       aria-label="Product Showcase"
     >
-      <div className="absolute inset-0 w-full h-full">
+      {/* Media Container - 21:9 on mobile, full height on desktop */}
+      <div className="relative w-full aspect-[21/9] md:absolute md:inset-0 md:w-full md:h-full">
         <AnimatePresence initial={false} custom={direction}>
           <motion.div
             key={page}
@@ -169,13 +170,17 @@ export const HeroSection: React.FC = () => {
                 loop 
                 muted 
                 playsInline
+                preload="auto"
                 className="w-full h-full object-cover"
               />
             ) : (
               <img
                 src={currentSlide.mediaUrl}
                 alt={currentSlide.productName}
-                className="w-full h-full object-cover"
+                loading={slideIndex === 0 ? "eager" : "lazy"}
+                fetchPriority={slideIndex === 0 ? "high" : "auto"}
+                decoding="async"
+                className="w-full h-full object-contain md:object-cover"
                 referrerPolicy="no-referrer"
               />
             )}
@@ -184,16 +189,16 @@ export const HeroSection: React.FC = () => {
         </AnimatePresence>
       </div>
 
-      {/* Carousel Controls */}
-      <div className="absolute bottom-[16px] md:bottom-[40px] left-1/2 -translate-x-1/2 z-20 flex items-center gap-[16px] md:gap-[24px]">
+      {/* Carousel Controls - Smaller on mobile */}
+      <div className="absolute bottom-[12px] md:bottom-[40px] left-1/2 -translate-x-1/2 z-20 flex items-center gap-[10px] md:gap-[24px]">
         <button 
            onClick={() => paginate(-1)} 
-           className="w-[32px] md:w-[48px] h-[32px] md:h-[48px] rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors focus:outline-none"
+           className="w-[24px] md:w-[48px] h-[24px] md:h-[48px] rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors focus:outline-none"
            aria-label="Previous Slide"
         >
-          <ChevronLeft className="w-[16px] md:w-[24px] h-[16px] md:h-[24px]" />
+          <ChevronLeft className="w-[12px] md:w-[24px] h-[12px] md:h-[24px]" />
         </button>
-        <div className="flex gap-[8px] md:gap-[12px]">
+        <div className="flex gap-[6px] md:gap-[12px]">
           {slides.map((_, idx) => (
             <button
               key={idx}
@@ -201,8 +206,8 @@ export const HeroSection: React.FC = () => {
                 const newDirection = idx > slideIndex ? 1 : -1;
                 setPage([idx, newDirection]);
               }}
-              className={`h-[3px] md:h-[4px] rounded-full transition-all duration-300 focus:outline-none ${
-                idx === slideIndex ? "w-[24px] md:w-[32px] bg-[#C9A227]" : "w-[12px] md:w-[16px] bg-white/40"
+              className={`h-[2px] md:h-[4px] rounded-full transition-all duration-300 focus:outline-none ${
+                idx === slideIndex ? "w-[16px] md:w-[32px] bg-[#C9A227]" : "w-[8px] md:w-[16px] bg-white/40"
               }`}
               aria-label={`Go to slide ${idx + 1}`}
             />
@@ -210,10 +215,10 @@ export const HeroSection: React.FC = () => {
         </div>
         <button 
            onClick={() => paginate(1)} 
-           className="w-[32px] md:w-[48px] h-[32px] md:h-[48px] rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors focus:outline-none"
+           className="w-[24px] md:w-[48px] h-[24px] md:h-[48px] rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors focus:outline-none"
            aria-label="Next Slide"
         >
-          <ChevronRight className="w-[16px] md:w-[24px] h-[16px] md:h-[24px]" />
+          <ChevronRight className="w-[12px] md:w-[24px] h-[12px] md:h-[24px]" />
         </button>
       </div>
     </section>

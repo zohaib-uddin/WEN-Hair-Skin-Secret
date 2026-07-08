@@ -238,13 +238,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           <>
             <button 
               onClick={prevImage}
-              className="absolute left-2 top-1/2 -translate-y-1/2 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all z-10 w-[32px] h-[32px] rounded-full bg-white/60 backdrop-blur-sm hover:bg-white text-[#1F4D3A] hover:text-[#C9A227] shadow-sm"
+              className="absolute left-2 top-1/2 -translate-y-1/2 flex items-center justify-center opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all z-10 w-[32px] h-[32px] rounded-full bg-white/60 backdrop-blur-sm hover:bg-white text-[#1F4D3A] hover:text-[#C9A227] shadow-sm"
             >
               <ChevronLeft className="w-[18px] h-[18px]" />
             </button>
             <button 
               onClick={nextImage}
-              className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all z-10 w-[32px] h-[32px] rounded-full bg-white/60 backdrop-blur-sm hover:bg-white text-[#1F4D3A] hover:text-[#C9A227] shadow-sm"
+              className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center justify-center opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all z-10 w-[32px] h-[32px] rounded-full bg-white/60 backdrop-blur-sm hover:bg-white text-[#1F4D3A] hover:text-[#C9A227] shadow-sm"
             >
               <ChevronRight className="w-[18px] h-[18px]" />
             </button>
@@ -280,14 +280,14 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         <div className="absolute top-3 right-3 z-10 flex flex-col gap-2">
           <button
             onClick={handleToggleFavorite}
-            className={`flex items-center justify-center w-[32px] h-[32px] rounded-full bg-transparent hover:bg-transparent shadow-none opacity-0 group-hover:opacity-100 transition-all z-10 group/fav ${isFavorited ? "text-red-500" : "text-[#1F4D3A] hover:text-[#C9A227]"}`}
+            className={`flex items-center justify-center w-[32px] h-[32px] rounded-full bg-white/70 backdrop-blur-sm hover:bg-white shadow-sm opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all z-10 group/fav ${isFavorited ? "text-red-500" : "text-[#1F4D3A] hover:text-[#C9A227]"}`}
             title="Wishlist"
           >
             <Heart className={`w-[16px] h-[16px] ${isFavorited ? "fill-red-500" : ""}`} />
           </button>
           <button
             onClick={(e) => { e.stopPropagation(); setQuickViewProductId(product.id); }}
-            className="flex items-center justify-center w-[32px] h-[32px] rounded-full bg-transparent hover:bg-transparent shadow-none opacity-0 group-hover:opacity-100 transition-all z-10 group/qv text-[#1F4D3A] hover:text-[#C9A227]"
+            className="flex items-center justify-center w-[32px] h-[32px] rounded-full bg-white/70 backdrop-blur-sm hover:bg-white shadow-sm opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all z-10 group/qv text-[#1F4D3A] hover:text-[#C9A227]"
             title="Quick View"
           >
             <Eye className="w-[16px] h-[16px]" />
