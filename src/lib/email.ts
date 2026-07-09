@@ -169,7 +169,7 @@ export async function sendOrderConfirmationEmail(order: EmailOrder, user?: Email
 
                     <!-- Luxury CTA Button -->
                     <div style="text-align: center; margin-top: 20px;">
-                      <a href="https://wen.com.pk/track-order?order=${orderNumber}" style="display: inline-block; background-color: #1F4D3A; color: #C9A227; font-family: sans-serif; font-size: 14px; font-weight: bold; text-decoration: none; padding: 12px 30px; border-radius: 6px; letter-spacing: 1px; text-transform: uppercase; border: 1px solid #C9A227; transition: background-color 0.2s ease;">
+                      <a href="https://wenhairandskin.com/track-order?order=${orderNumber}" style="display: inline-block; background-color: #1F4D3A; color: #C9A227; font-family: sans-serif; font-size: 14px; font-weight: bold; text-decoration: none; padding: 12px 30px; border-radius: 6px; letter-spacing: 1px; text-transform: uppercase; border: 1px solid #C9A227; transition: background-color 0.2s ease;">
                         Track Your Order
                       </a>
                     </div>
@@ -196,7 +196,7 @@ export async function sendOrderConfirmationEmail(order: EmailOrder, user?: Email
     `;
 
     const { data, error } = await resend.emails.send({
-      from: "Wen Secrets <onboarding@resend.dev>", // Or verified custom sender on production
+      from: "Wen Hair & Skin <zohaibuddin376@gmail.com>", // Or verified custom sender on production
       to: [customerEmail],
       subject: `Order Confirmation: ${orderNumber} - Wen Hair & Skin Secret`,
       html: emailContent,
@@ -314,7 +314,7 @@ export async function sendAdminReplyEmail(inquiry: { name: string; email: string
     `;
 
     const { data, error } = await resend.emails.send({
-      from: "Wen Secrets <onboarding@resend.dev>", // Or verified custom sender on production
+      from: "Wen Hair & Skin <zohaibuddin376@gmail.com>", // Or verified custom sender on production
       to: [customerEmail],
       subject: `Re: ${inquiry.subject}`,
       html: emailContent,
@@ -337,7 +337,7 @@ export async function sendAdminNewUserNotification(user: { email: string; fullNa
   if (!apiKey) return { success: false, error: "Missing API Key" };
   try {
     const resend = new Resend(apiKey);
-    const adminEmail = process.env.ADMIN_EMAIL || "admin@example.com"; // Replace with actual admin email or from config
+    const adminEmail = process.env.ADMIN_EMAIL || "admin@gmail.com"; // Replace with actual admin email or from config
     const emailContent = `
       <div style="font-family: sans-serif; max-width: 600px; margin: auto;">
         <h2>New Customer Sign Up</h2>
@@ -351,7 +351,7 @@ export async function sendAdminNewUserNotification(user: { email: string; fullNa
       </div>
     `;
     const { data, error } = await resend.emails.send({
-      from: "Wen Secrets System <onboarding@resend.dev>",
+      from: "Wen Hair & Skin <zohaibuddin376@gmail.com>",
       to: [adminEmail],
       subject: "Alert: New Customer Registration",
       html: emailContent,
@@ -427,7 +427,7 @@ export async function sendInvoiceEmail(order: EmailOrder, user?: EmailUser | nul
     `;
 
     const { data, error } = await resend.emails.send({
-      from: "Wen Secrets Invoices <onboarding@resend.dev>",
+      from: "Wen Hair & Skin Invoices <zohaibuddin376@gmail.com>",
       to: [customerEmail],
       subject: `Invoice for Order ${order.order_number}`,
       html: emailContent,

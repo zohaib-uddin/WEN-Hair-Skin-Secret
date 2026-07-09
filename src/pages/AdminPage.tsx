@@ -195,34 +195,7 @@ export const AdminPage: React.FC = () => {
     }
   }, [user, profile, authLoading]);
 
-  if (authLoading || (user && !profile)) {
-    return (
-      <div className="min-h-screen bg-[#F7F2EA] flex items-center justify-center">
-        <div className="text-[#1F4D3A] font-playfair font-bold text-xl uppercase tracking-widest animate-pulse">
-          Authenticating Admin Sanctuary...
-        </div>
-      </div>
-    );
-  }
 
-  if (!user || profile?.role !== 'admin') {
-    return (
-      <div className="min-h-screen bg-[#F7F2EA] flex items-center justify-center p-8 text-center">
-        <div className="max-w-md bg-white border border-[#E8E1D3] p-8 rounded-2xl">
-          <h2 className="font-playfair text-2xl font-bold text-rose-700 mb-2">ACCESS RESTRICTED</h2>
-          <p className="text-xs text-gray-550 font-sans leading-relaxed mb-6">
-            This premium administrative panel requires verified cryptographic security keys. Redirecting to Admin Sanctuary...
-          </p>
-          <button
-            onClick={() => navigate('admin-sign-in')}
-            className="px-5 py-3 bg-[#1F4D3A] hover:bg-[#153427] text-white text-[10px] font-bold tracking-widest uppercase rounded-xl"
-          >
-            Go to Admin Login
-          </button>
-        </div>
-      </div>
-    );
-  }
 
   // Local States for Managing Admin entities with persistence support
   const [orders, setOrders] = useState<AdminOrder[]>([]);
@@ -616,7 +589,7 @@ export const AdminPage: React.FC = () => {
       originalPrice: 3000,
       rating: 5.0,
       reviewCount: 0,
-      image: "https://images.unsplash.com/photo-1608248597481-496100c8c836?q=80&w=600&auto=format&fit=crop",
+      image: img_4xji1u,
       description: "",
       keyBenefits: [],
       potencyExplanation: "",
@@ -1181,6 +1154,35 @@ export const AdminPage: React.FC = () => {
     }
   };
 
+  if (authLoading || (user && !profile)) {
+    return (
+      <div className="min-h-screen bg-[#F7F2EA] flex items-center justify-center">
+        <div className="text-[#1F4D3A] font-playfair font-bold text-xl uppercase tracking-widest animate-pulse">
+          Authenticating Admin Sanctuary...
+        </div>
+      </div>
+    );
+  }
+
+  if (!user || profile?.role !== 'admin') {
+    return (
+      <div className="min-h-screen bg-[#F7F2EA] flex items-center justify-center p-8 text-center">
+        <div className="max-w-md bg-white border border-[#E8E1D3] p-8 rounded-2xl">
+          <h2 className="font-playfair text-2xl font-bold text-rose-700 mb-2">ACCESS RESTRICTED</h2>
+          <p className="text-xs text-gray-550 font-sans leading-relaxed mb-6">
+            This premium administrative panel requires verified cryptographic security keys. Redirecting to Admin Sanctuary...
+          </p>
+          <button
+            onClick={() => navigate('admin-sign-in')}
+            className="px-5 py-3 bg-[#1F4D3A] hover:bg-[#153427] text-white text-[10px] font-bold tracking-widest uppercase rounded-xl"
+          >
+            Go to Admin Login
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-[#f5f5f5] flex flex-col lg:flex-row text-left font-sans text-[#2C2C2C]">
       {/* Sidebar collapsible drawer panel */}
@@ -1579,7 +1581,7 @@ export const AdminPage: React.FC = () => {
                       isPositive={true}
                     />
                     <StatCard 
-                      title="Completed Batches" 
+                      title="Completed Orders" 
                       value={`${orders.filter(o => o.status === "Delivered").length} / ${orders.length}`}
                       iconName="ShoppingBag"
                       colorTheme="dark-green"
@@ -1587,7 +1589,7 @@ export const AdminPage: React.FC = () => {
                       isPositive={true}
                     />
                     <StatCard 
-                      title="Diagnostic Members" 
+                      title="Total Customers" 
                       value={customers.length}
                       iconName="Users"
                       colorTheme="gold"
@@ -1595,7 +1597,7 @@ export const AdminPage: React.FC = () => {
                       isPositive={true}
                     />
                     <StatCard 
-                      title="Crit Stock Alerts" 
+                      title="Product Stock Alerts" 
                       value={products.filter(p => (p.stock_quantity !== undefined ? p.stock_quantity : 15) < 10).length}
                       iconName="Settings2"
                       colorTheme="red"
@@ -2032,7 +2034,7 @@ export const AdminPage: React.FC = () => {
               {activeSection === "customers" && (
                 <div className="space-y-6">
                   <div className="bg-white border border-[#E8E1D3] rounded-3xl p-6 shadow-xs">
-                    <h4 className="font-playfair text-lg font-bold text-[#1F4D3A] uppercase tracking-wider mb-4">Diagnostic Registry</h4>
+                    <h4 className="font-playfair text-lg font-bold text-[#1F4D3A] uppercase tracking-wider mb-4">Customer Info</h4>
                     {customersLoading ? (
                       <div className="text-center py-6 text-xs text-[#757575] italic">Loading registered diagnostics...</div>
                     ) : customers.length === 0 ? (
@@ -2045,9 +2047,14 @@ export const AdminPage: React.FC = () => {
                               <span className="font-semibold text-[#2C2C2C] block text-sm">{cust.full_name || "Valued Patron"}</span>
                               <span className="text-[#757575]">{cust.email} {cust.phone ? `• ${cust.phone}` : ""}</span>
                             </div>
-                            <span className="text-[#C9A227] font-mono font-bold uppercase tracking-widest text-[10px]">
-                              {cust.address ? `${cust.address}, ` : ""}{cust.city || "Lahore"}
-                            </span>
+                            {/* ROLE BADGE - UPDATED LOGIC */}
+    <span className={`px-3 py-1 rounded-full text-[9px] font-bold uppercase tracking-widest border ${
+      cust.role?.toLowerCase() === 'admin' 
+        ? 'bg-[#C9A227]/10 text-[#C9A227] border-[#C9A227]/30' 
+        : 'bg-[#1F4D3A]/5 text-[#1F4D3A] border-[#1F4D3A]/20'
+    }`}>
+      {cust.role?.toLowerCase() === 'admin' ? 'Admin' : 'Customer'}
+    </span>
                           </div>
                         ))}
                       </div>
@@ -2809,7 +2816,7 @@ export const AdminPage: React.FC = () => {
                     
                     <div className="divide-y divide-stone-100">
                       {selectedOrderDetail.items.map((item: any, idx: number) => {
-                        const displayImg = item.image || "https://images.unsplash.com/photo-1608248597481-496100c80836?q=80&w=300&auto=format&fit=crop";
+                        const displayImg = item.image || img_fm3yzs;
                         const displayCategory = item.category || "General formulation";
                         const displayTarget = item.concern || "All Skins";
                         const displaySize = item.variant || "100ml";

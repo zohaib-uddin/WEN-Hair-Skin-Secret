@@ -306,15 +306,7 @@ export const SignInPage: React.FC = () => {
             </form>
           )}
 
-          {/* Admin link */}
-          <div className="text-center pt-8">
-            <button
-              onClick={() => navigate('admin-sign-in')}
-              className="text-[#e5e5e5] hover:text-[#1F4D3A] text-[10px] uppercase tracking-widest transition-colors mx-auto cursor-pointer"
-            >
-              Administrator Access
-            </button>
-          </div>
+         
         </div>
       </div>
     </div>

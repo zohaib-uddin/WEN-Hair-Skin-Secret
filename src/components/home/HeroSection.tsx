@@ -177,8 +177,8 @@ export const HeroSection: React.FC = () => {
               <img
                 src={currentSlide.mediaUrl}
                 alt={currentSlide.productName}
-                loading={slideIndex === 0 ? "eager" : "lazy"}
-                fetchPriority={slideIndex === 0 ? "high" : "auto"}
+               loading="eager"
+fetchPriority="high"
                 decoding="async"
                 className="w-full h-full object-contain md:object-cover"
                 referrerPolicy="no-referrer"

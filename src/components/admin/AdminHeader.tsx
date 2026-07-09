@@ -153,7 +153,7 @@ export const AdminHeader: React.FC<AdminHeaderProps> = ({
       <div className="flex items-center gap-4">
         {/* Navigation tracker indicator for demo */}
         <span className="hidden md:inline-flex items-center gap-1 bg-[#1F4D3A]/5 text-[#1F4D3A] text-[9.5px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-[#1F4D3A]/10">
-          ● Secure Live Mode
+          ● Real-Time Data
         </span>
 
         {/* Notifications list trigger */}
