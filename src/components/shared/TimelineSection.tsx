@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { BeforeAfterSlider } from "./BeforeAfterSlider";
-import img1 from "../../assets/images/wen 10.png"
-import img2 from "../../assets/images/wen 11.png"
-import img3 from "../../assets/images/wen 12.png"
-import img4 from "../../assets/images/wen 13.png"
-import img5 from "../../assets/images/wen 14.png"
-import img6 from "../../assets/images/wen 15.png"
+import img1 from "../../assets/images/wen 10.png";
+import img2 from "../../assets/images/wen 11.png";
+import img3 from "../../assets/images/wen 12.png";
+import img4 from "../../assets/images/wen 13.png";
+import img5 from "../../assets/images/wen 14.png";
+import img6 from "../../assets/images/wen 15.png";
 
 
 interface TimelineMilestone {
@@ -58,7 +58,7 @@ export const TimelineSection: React.FC = () => {
 
   return (
     <section
-      className="py-[60px] md:py-[80px] lg:py-[120px] bg-[#F7F2EA] font-sans"
+      className="py-[60px] md:py-[80px] lg:py-[120px] bg-[#F4EBDB] font-sans"
       id="proven-results-section"
     >
       <div className="max-w-[1280px] mx-auto px-[24px]">
@@ -73,15 +73,15 @@ export const TimelineSection: React.FC = () => {
             className="flex flex-col space-y-[32px]"
           >
             <div>
-              <div className="w-[40px] h-[2px] bg-[#C9A227] mb-[8px] md:mb-[12px]" />
-              <span className="text-[#C9A227] text-[9px] md:text-[11px] font-bold tracking-[3px] uppercase block mb-[8px] md:mb-[12px]">
+              <div className="w-[40px] h-[2px] bg-[#B69355] mb-[8px] md:mb-[12px]" />
+              <span className="text-[#B69355] text-[9px] md:text-[11px] font-bold tracking-[3px] uppercase block mb-[8px] md:mb-[12px]">
                 Proven Results
               </span>
-              <h2 className="font-playfair text-[24px] md:text-[36px] font-bold text-[#1F4D3A] tracking-[-0.01em]">
+              <h2 className="font-playfair text-[24px] md:text-[36px] font-bold text-[#254936] tracking-[-0.01em]">
                 Your Journey to <br className="hidden lg:block" /> Healthier
                 Hair & Skin
               </h2>
-              <p className="text-[11px] md:text-[14px] text-[#6b6b6b] leading-[1.6] mt-[8px] md:mt-[12px] max-w-[400px]">
+              <p className="text-[11px] md:text-[14px] text-[#63786A] leading-[1.6] mt-[8px] md:mt-[12px] max-w-[400px]">
                 Watch real transformations unfold as our clinical botanical
                 ingredients repair, strengthen, and nourish your hair and skin from the
                 roots up.
@@ -96,8 +96,8 @@ export const TimelineSection: React.FC = () => {
                   onClick={() => setActiveDay(m.day)}
                   className={`flex-1 py-[10px] md:py-[12px] px-[8px] md:px-[16px] rounded-xl text-[10px] md:text-[12px] font-bold tracking-[1px] uppercase transition-all duration-300 outline-none border ${
                     activeDay === m.day
-                      ? "bg-[#1F4D3A] text-white border-[#1F4D3A]"
-                      : "bg-white text-[#1F4D3A] border-[#e5e5e5] hover:border-[#1F4D3A]"
+                      ? "bg-[#254936] text-white border-[#254936]"
+                      : "bg-white text-[#254936] border-[#E0D4BE] hover:border-[#254936]"
                   }`}
                 >
                   Day {m.day}
@@ -114,13 +114,13 @@ export const TimelineSection: React.FC = () => {
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.3 }}
               >
-                <h3 className="font-playfair text-[18px] md:text-[24px] font-bold text-[#1F4D3A] mb-[8px] md:mb-[12px]">
+                <h3 className="font-playfair text-[18px] md:text-[24px] font-bold text-[#254936] mb-[8px] md:mb-[12px]">
                   {currentMilestone.title}
                 </h3>
-                <p className="text-[11px] md:text-[14px] text-[#6b6b6b] leading-[1.6] max-w-[500px] mb-[16px] md:mb-[24px]">
+                <p className="text-[11px] md:text-[14px] text-[#63786A] leading-[1.6] max-w-[500px] mb-[16px] md:mb-[24px]">
                   {currentMilestone.description}
                 </p>
-                <button className="bg-[#1F4D3A] text-white font-bold text-[10px] md:text-[12px] uppercase tracking-[1px] px-[24px] md:px-[32px] py-[12px] md:py-[16px] rounded-xl hover:bg-[#C9A227] transition-colors outline-none inline-block">
+                <button className="bg-[#254936] text-white font-bold text-[10px] md:text-[12px] uppercase tracking-[1px] px-[24px] md:px-[32px] py-[12px] md:py-[16px] rounded-xl hover:bg-[#B69355] transition-colors outline-none inline-block">
                   Shop The Growth Kit
                 </button>
               </motion.div>

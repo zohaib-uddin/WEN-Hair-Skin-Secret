@@ -36,14 +36,14 @@ export const ProductDetailPage: React.FC = () => {
   // Fallback if no product loaded
   if (!selectedProduct) {
     return (
-      <div className="py-32 text-center bg-white text-[#1F4D3A] min-h-screen font-sans flex flex-col items-center justify-center px-4">
-        <Sparkles className="w-12 h-12 text-[#C9A227] mb-4 animate-pulse" />
-        <p className="text-[#78716C] text-sm max-w-sm mb-6 leading-relaxed">
+      <div className="py-32 text-center bg-gradient-to-b from-[#F4EBDB]/20 to-white text-[#254936] min-h-screen font-sans flex flex-col items-center justify-center px-4">
+        <Sparkles className="w-12 h-12 text-[#B69355] mb-4 animate-pulse" />
+        <p className="text-[#63786A] text-sm max-w-sm mb-6 leading-relaxed">
           The selected product was not found. Let's return to the shop catalogue.
         </p>
         <button
           onClick={() => navigate('shop')}
-          className="bg-[#1F4D3A] text-white hover:bg-[#C9A227] hover:text-[#1F4D3A] text-xs px-8 py-4 uppercase rounded-xl font-bold tracking-widest transition-all shadow-md cursor-pointer border-none"
+          className="bg-[#254936] text-white hover:bg-[#B69355] hover:text-[#254936] text-xs px-8 py-4 uppercase rounded-xl font-bold tracking-widest transition-all shadow-md cursor-pointer border-none"
         >
           Return to Catalogue
         </button>
@@ -190,18 +190,18 @@ export const ProductDetailPage: React.FC = () => {
   ].filter(Boolean)));
 
   return (
-    <div className="bg-white text-[#1a1a1a] min-h-screen pt-[100px] sm:pt-[120px] pb-[100px] font-sans text-left relative">
+    <div className="bg-gradient-to-b from-[#F4EBDB]/20 to-white text-[#254936] min-h-screen pt-[100px] sm:pt-[120px] pb-[100px] font-sans text-left relative">
       <div className="max-w-[1440px] mx-auto px-6 md:px-8 xl:px-12">
         
         {/* Luxury Breadcrumbs */}
-        <div className="flex flex-wrap items-center space-x-2 text-[12px] text-[#6b6b6b] mb-[16px]" id="luxury-breadcrumbs">
-          <button onClick={() => navigate('home')} className="hover:text-[#C9A227] transition-colors bg-transparent border-none p-0 cursor-pointer">Home</button>
+        <div className="flex flex-wrap items-center space-x-2 text-[12px] text-[#63786A] mb-[16px]" id="luxury-breadcrumbs">
+          <button onClick={() => navigate('home')} className="hover:text-[#B69355] transition-colors bg-transparent border-none p-0 cursor-pointer">Home</button>
           <span>/</span>
-          <button onClick={() => navigate('shop')} className="hover:text-[#C9A227] transition-colors bg-transparent border-none p-0 cursor-pointer">Shop</button>
+          <button onClick={() => navigate('shop')} className="hover:text-[#B69355] transition-colors bg-transparent border-none p-0 cursor-pointer">Shop</button>
           <span>/</span>
-          <span className="hover:text-[#C9A227] transition-colors cursor-pointer">{selectedProduct.category ? selectedProduct.category : "Hair Care"}</span>
+          <span className="hover:text-[#B69355] transition-colors cursor-pointer">{selectedProduct.category ? selectedProduct.category : "Hair Care"}</span>
           <span>/</span>
-          <span className="text-[#C9A227] line-clamp-1 max-w-[200px]">{selectedProduct.name}</span>
+          <span className="text-[#B69355] line-clamp-1 max-w-[200px]">{selectedProduct.name}</span>
         </div>
 
         {/* 2-Column Desktop Grid, Stacked Mobile Layout */}
@@ -211,7 +211,7 @@ export const ProductDetailPage: React.FC = () => {
           <div className="w-full lg:w-[45%] space-y-4 lg:sticky lg:top-24">
             {/* Main Interactive Gallery image */}
             <div 
-              className="relative w-full max-w-[400px] lg:max-w-[500px] mx-auto aspect-square md:aspect-[4/5] bg-[#fafafa] rounded-[20px] overflow-hidden flex items-center justify-center group select-none"
+              className="relative w-full max-w-[400px] lg:max-w-[500px] mx-auto aspect-square md:aspect-[4/5] bg-white rounded-[20px] overflow-hidden flex items-center justify-center group select-none"
               id="luxury-main-pdp-gallery-frame"
             >
               <div 
@@ -239,7 +239,7 @@ export const ProductDetailPage: React.FC = () => {
                   e.stopPropagation();
                   setActiveThumb((prev) => (prev === 0 ? galleryImages.length - 1 : prev - 1));
                 }}
-                className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-transparent flex items-center justify-center text-[#1F4D3A] hover:bg-transparent hover:text-[#C9A227] shadow-none transition duration-300 cursor-pointer z-10"
+                className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-transparent flex items-center justify-center text-[#254936] hover:bg-transparent hover:text-[#B69355] shadow-none transition duration-300 cursor-pointer z-10"
                 aria-label="Previous image"
               >
                 <ArrowLeft className="w-5 h-5" />
@@ -251,7 +251,7 @@ export const ProductDetailPage: React.FC = () => {
                   e.stopPropagation();
                   setActiveThumb((prev) => (prev === galleryImages.length - 1 ? 0 : prev + 1));
                 }}
-                className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-transparent flex items-center justify-center text-[#1F4D3A] hover:bg-transparent hover:text-[#C9A227] shadow-none transition duration-300 cursor-pointer z-10"
+                className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-transparent flex items-center justify-center text-[#254936] hover:bg-transparent hover:text-[#B69355] shadow-none transition duration-300 cursor-pointer z-10"
                 aria-label="Next image"
               >
                 <ArrowRight className="w-5 h-5" />
@@ -259,13 +259,13 @@ export const ProductDetailPage: React.FC = () => {
 
               <button 
                 onClick={() => setLightboxOpen(true)}
-                className="absolute top-4 left-4 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md hover:text-[#C9A227] transition-colors z-10 cursor-pointer"
+                className="absolute top-4 left-4 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md hover:text-[#B69355] transition-colors z-10 cursor-pointer"
               >
                 <Compass className="w-4 h-4" />
               </button>
               
-              <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none z-0">
-                <span className="bg-white/95 text-[8px] tracking-widest font-bold uppercase py-1.5 px-3 rounded-md shadow-sm text-[#1F4D3A]">
+              <div className="absolute inset-0 bg-[#254936]/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none z-0">
+                <span className="bg-white/95 text-[8px] tracking-widest font-bold uppercase py-1.5 px-3 rounded-md shadow-sm text-[#254936]">
                   Click to Expand & Rotate
                 </span>
               </div>
@@ -277,8 +277,8 @@ export const ProductDetailPage: React.FC = () => {
                 <button
                   key={idx}
                   onClick={() => setActiveThumb(idx)}
-                  className={`relative w-[80px] h-[80px] rounded-[12px] overflow-hidden flex-shrink-0 transition-all duration-300 focus:outline-none bg-[#fafafa] p-1 flex items-center justify-center cursor-pointer ${
-                    activeThumb === idx ? "border-[2px] border-[#C9A227] scale-105" : "border-[1px] border-[#e5e5e5] opacity-70 hover:opacity-100 hover:scale-105"
+                  className={`relative w-[80px] h-[80px] rounded-[12px] overflow-hidden flex-shrink-0 transition-all duration-300 focus:outline-none bg-white p-1 flex items-center justify-center cursor-pointer ${
+                    activeThumb === idx ? "border-[2px] border-[#B69355] scale-105" : "border-[1px] border-[#E0D4BE] opacity-70 hover:opacity-100 hover:scale-105"
                   }`}
                   aria-label={`View thumbnail ${idx + 1}`}
                 >
@@ -297,23 +297,23 @@ export const ProductDetailPage: React.FC = () => {
           <div className="w-full lg:w-[55%] space-y-0">
             
             {/* Category Badge */}
-            <div className="text-[11px] font-bold uppercase tracking-[2px] text-[#C9A227] mb-[12px]">
+            <div className="text-[11px] font-bold uppercase tracking-[2px] text-[#B69355] mb-[12px]">
               {selectedProduct.category ? selectedProduct.category : "HAIR CARE"}{selectedProduct.concern && ` • ${selectedProduct.concern}`}
             </div>
             
             {/* Title */}
-            <h1 className="font-playfair text-[28px] lg:text-[36px] font-semibold text-[#1F4D3A] leading-[1.2] mb-[16px]">
+            <h1 className="font-playfair text-[28px] lg:text-[36px] font-semibold text-[#254936] leading-[1.2] mb-[16px]">
               {selectedProduct.name}
             </h1>
 
             {/* Pricing Section */}
             <div className="flex items-baseline flex-wrap mb-[24px]">
-              <span className="text-[32px] font-bold text-[#1F4D3A]">
+              <span className="text-[32px] font-bold text-[#254936]">
                 Rs. {(currentPrice || 0).toLocaleString()}
               </span>
               {originalPrice && (
                 <>
-                  <span className="text-[18px] text-[#6b6b6b] line-through ml-[12px]">
+                  <span className="text-[18px] text-[#63786A] line-through ml-[12px]">
                     Rs. {(originalPrice || 0).toLocaleString()}
                   </span>
                   <span className="text-[13px] font-bold text-green-700 bg-[#f0fdf4] px-[12px] py-[6px] rounded-full ml-[12px]">
@@ -324,13 +324,13 @@ export const ProductDetailPage: React.FC = () => {
             </div>
 
             {/* Short description */}
-            <p className="text-[15px] text-[#6b6b6b] leading-[1.7] mb-[32px]">
+            <p className="text-[15px] text-[#63786A] leading-[1.7] mb-[32px]">
               {selectedProduct.potencyExplanation || "Dermatologist-approved skin and hair care, created with organic Himalayan natural extracts to help protect against Pakistan's weather and water conditions."}
             </p>
 
             {/* Variant Selector (Size/Volume) */}
             <div className="mb-[24px]">
-              <label className="text-[11px] font-bold text-[#1a1a1a] block mb-[8px]">
+              <label className="text-[11px] font-bold text-[#254936] block mb-[8px]">
                 Select Size
               </label>
               <div className="flex flex-row flex-wrap gap-[8px]">
@@ -341,8 +341,8 @@ export const ProductDetailPage: React.FC = () => {
                       onClick={() => setSelectedVariant(v)}
                       className={`py-[8px] px-[16px] rounded-[8px] text-[11px] font-medium transition-all duration-200 cursor-pointer ${
                         selectedVariant === v
-                          ? "border-[2px] border-[#1F4D3A] bg-[#f0f7f4] text-[#1F4D3A] font-bold"
-                          : "border-[2px] border-[#e5e5e5] bg-white text-[#1a1a1a] hover:border-[#C9A227]"
+                          ? "border-[2px] border-[#254936] bg-[#f0f7f4] text-[#254936] font-bold"
+                          : "border-[2px] border-[#E0D4BE] bg-white text-[#254936] hover:border-[#B69355]"
                       }`}
                     >
                       {v}
@@ -355,15 +355,15 @@ export const ProductDetailPage: React.FC = () => {
             {/* Quantity Selector Option */}
             <div className="mb-[24px]">
               <div className="flex items-center justify-between mb-[12px]">
-                <label className="text-[13px] font-bold text-[#1a1a1a]">
+                <label className="text-[13px] font-bold text-[#254936]">
                   Quantity
                 </label>
               </div>
               <div className="flex items-center gap-4">
-                <div className="flex items-center border-[2px] border-[#e5e5e5] rounded-[12px] overflow-hidden bg-white h-[44px]">
+                <div className="flex items-center border-[2px] border-[#E0D4BE] rounded-[12px] overflow-hidden bg-white h-[44px]">
                   <button
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                    className="w-[44px] h-[44px] bg-white text-[#1a1a1a] hover:bg-[#f5f5f5] transition focus:outline-none border-none cursor-pointer flex items-center justify-center"
+                    className="w-[44px] h-[44px] bg-white text-[#254936] hover:bg-[#f5f5f5] transition focus:outline-none border-none cursor-pointer flex items-center justify-center"
                     aria-label="Decrease quantity"
                   >
                     <Minus className="w-4 h-4" />
@@ -372,11 +372,11 @@ export const ProductDetailPage: React.FC = () => {
                     type="text"
                     readOnly
                     value={quantity}
-                    className="w-[60px] h-[44px] text-center text-[14px] font-semibold text-[#1a1a1a] outline-none border-x border-[#e5e5e5] py-0 m-0"
+                    className="w-[60px] h-[44px] text-center text-[14px] font-semibold text-[#254936] outline-none border-x border-[#E0D4BE] py-0 m-0"
                   />
                   <button
                     onClick={() => setQuantity(quantity + 1)}
-                    className="w-[44px] h-[44px] bg-white text-[#1a1a1a] hover:bg-[#f5f5f5] transition focus:outline-none border-none cursor-pointer flex items-center justify-center"
+                    className="w-[44px] h-[44px] bg-white text-[#254936] hover:bg-[#f5f5f5] transition focus:outline-none border-none cursor-pointer flex items-center justify-center"
                     aria-label="Increase quantity"
                   >
                     <Plus className="w-4 h-4" />
@@ -398,7 +398,7 @@ export const ProductDetailPage: React.FC = () => {
                 <button
                   onClick={handleAddToCart}
                   disabled={isAdding || isOutOfStock}
-                  className="flex-1 bg-white border-[2px] border-[#1F4D3A] text-[#1F4D3A] hover:bg-[#f5f5f5] disabled:bg-gray-200 disabled:text-[#757575] disabled:border-gray-200 font-bold py-[18px] px-6 rounded-[12px] text-[14px] uppercase tracking-[1px] transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-sm hover:-translate-y-[2px] hover:shadow-lg"
+                  className="flex-1 bg-white border-[2px] border-[#254936] text-[#254936] hover:bg-[#f5f5f5] disabled:bg-gray-200 disabled:text-[#63786A] disabled:border-[#E0D4BE] font-bold py-[18px] px-6 rounded-[12px] text-[14px] uppercase tracking-[1px] transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-sm hover:-translate-y-[2px] hover:shadow-lg"
                 >
                   {isAdding ? (
                     <>
@@ -416,7 +416,7 @@ export const ProductDetailPage: React.FC = () => {
                 <button
                   onClick={handleDirectCheckout}
                   disabled={isOutOfStock}
-                  className="flex-1 bg-[#1F4D3A] hover:bg-[#153629] text-white disabled:bg-gray-200 disabled:text-[#757575] font-bold py-[18px] px-6 rounded-[12px] text-[14px] uppercase tracking-[1px] transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-sm hover:-translate-y-[2px] hover:shadow-lg"
+                  className="flex-1 bg-[#254936] hover:bg-[#153629] text-white disabled:bg-gray-200 disabled:text-[#63786A] font-bold py-[18px] px-6 rounded-[12px] text-[14px] uppercase tracking-[1px] transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-sm hover:-translate-y-[2px] hover:shadow-lg"
                 >
                   <ArrowRight className="w-[18px] h-[18px]" />
                   <span>Buy Now</span>
@@ -429,7 +429,7 @@ export const ProductDetailPage: React.FC = () => {
                   className={`flex-1 py-[14px] text-[13px] rounded-[12px] flex items-center justify-center gap-2 transition-all cursor-pointer border-[2px] ${
                     isWishlisted 
                       ? "bg-red-50 border-red-200 text-red-500"
-                      : "border-[#e5e5e5] text-[#1a1a1a] bg-white hover:border-[#C9A227]"
+                      : "border-[#E0D4BE] text-[#254936] bg-white hover:border-[#B69355]"
                   }`}
                 >
                   <Heart className={`w-4 h-4 ${isWishlisted ? "fill-red-500 text-red-500" : ""}`} />
@@ -438,7 +438,7 @@ export const ProductDetailPage: React.FC = () => {
 
                 <button
                   onClick={handleShareClick}
-                  className="flex-1 py-[14px] text-[13px] border-[2px] border-[#e5e5e5] bg-white hover:border-[#C9A227] rounded-[12px] text-[#1a1a1a] transition flex items-center justify-center gap-2 cursor-pointer"
+                  className="flex-1 py-[14px] text-[13px] border-[2px] border-[#E0D4BE] bg-white hover:border-[#B69355] rounded-[12px] text-[#254936] transition flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <Share2 className="w-4 h-4" />
                   <span>{copiedLink ? "Link Copied!" : "Share"}</span>
@@ -446,39 +446,39 @@ export const ProductDetailPage: React.FC = () => {
               </div>
 
               {/* Rating & Reviews Moved Here */}
-              <div className="flex items-center gap-[12px] py-[12px] border-y border-[#e5e5e5]">
-                <div className="flex text-[#C9A227]">
+              <div className="flex items-center gap-[12px] py-[12px] border-y border-[#E0D4BE]">
+                <div className="flex text-[#B69355]">
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star
                       key={i}
                       className={`w-[16px] h-[16px] ${
-                        i < Math.floor(selectedProduct.rating) ? "fill-[#C9A227]" : "text-gray-200 fill-gray-200"
+                        i < Math.floor(selectedProduct.rating) ? "fill-[#B69355]" : "text-gray-200 fill-gray-200"
                       }`}
                     />
                   ))}
                 </div>
-                <span className="font-bold text-[#1F4D3A]">{selectedProduct.rating.toFixed(1)}</span>
-                <span className="text-[13px] text-[#6b6b6b] hover:underline cursor-pointer">({selectedProduct.reviewCount || 128} reviews)</span>
+                <span className="font-bold text-[#254936]">{selectedProduct.rating.toFixed(1)}</span>
+                <span className="text-[13px] text-[#63786A] hover:underline cursor-pointer">({selectedProduct.reviewCount || 128} reviews)</span>
               </div>
             </div>
 
             {/* Direct Trust Badges */}
-            <div className="flex flex-row justify-between gap-[12px] md:gap-[24px] py-[24px] border-y border-[#e5e5e5] mt-[24px] mb-[24px] flex-nowrap overflow-x-auto hide-scrollbar">
+            <div className="flex flex-row justify-between gap-[12px] md:gap-[24px] py-[24px] border-y border-[#E0D4BE] mt-[24px] mb-[24px] flex-nowrap overflow-x-auto hide-scrollbar">
               <div className="flex flex-col items-center gap-2 w-auto shrink-0">
-                <Truck className="w-[16px] h-[16px] md:w-[20px] md:h-[20px] text-[#C9A227]" />
-                <span className="text-[10px] md:text-[12px] text-[#6b6b6b] text-center">Free Shipping</span>
+                <Truck className="w-[16px] h-[16px] md:w-[20px] md:h-[20px] text-[#B69355]" />
+                <span className="text-[10px] md:text-[12px] text-[#63786A] text-center">Free Shipping</span>
               </div>
               <div className="flex flex-col items-center gap-2 w-auto shrink-0">
-                <RotateCcw className="w-[16px] h-[16px] md:w-[20px] md:h-[20px] text-[#C9A227]" />
-                <span className="text-[10px] md:text-[12px] text-[#6b6b6b] text-center">7-Day Returns</span>
+                <RotateCcw className="w-[16px] h-[16px] md:w-[20px] md:h-[20px] text-[#B69355]" />
+                <span className="text-[10px] md:text-[12px] text-[#63786A] text-center">7-Day Returns</span>
               </div>
               <div className="flex flex-col items-center gap-2 w-auto shrink-0">
-                <ShieldCheck className="w-[16px] h-[16px] md:w-[20px] md:h-[20px] text-[#C9A227]" />
-                <span className="text-[10px] md:text-[12px] text-[#6b6b6b] text-center">Authentic</span>
+                <ShieldCheck className="w-[16px] h-[16px] md:w-[20px] md:h-[20px] text-[#B69355]" />
+                <span className="text-[10px] md:text-[12px] text-[#63786A] text-center">Authentic</span>
               </div>
               <div className="flex flex-col items-center gap-2 w-auto shrink-0">
-                <Shield className="w-[16px] h-[16px] md:w-[20px] md:h-[20px] text-[#C9A227]" />
-                <span className="text-[10px] md:text-[12px] text-[#6b6b6b] text-center">Secure Payment</span>
+                <Shield className="w-[16px] h-[16px] md:w-[20px] md:h-[20px] text-[#B69355]" />
+                <span className="text-[10px] md:text-[12px] text-[#63786A] text-center">Secure Payment</span>
               </div>
             </div>
 
@@ -486,12 +486,12 @@ export const ProductDetailPage: React.FC = () => {
             <div className="space-y-0">
               <Accordion>
                 <AccordionItem title="Description" isOpenByDefault={true} className="border-b border-[#f0f0f0]">
-                  <div className="py-[16px] text-[#6b6b6b] leading-[1.7] text-[14px]">
+                  <div className="py-[16px] text-[#63786A] leading-[1.7] text-[14px]">
                     <p className="mb-3">
                       {selectedProduct.description || "Crafted specifically to combat modern dust, local weather fatigue, and high salt mineral levels on skin pores."}
                     </p>
                     <div className="mt-4">
-                      <p className="font-semibold text-[#1a1a1a] mb-2">Key Benefits:</p>
+                      <p className="font-semibold text-[#254936] mb-2">Key Benefits:</p>
                       <ul className="list-disc list-inside space-y-1">
                         {selectedProduct.keyBenefits?.map((b, i) => (
                           <li key={i}>{b}</li>
@@ -501,21 +501,21 @@ export const ProductDetailPage: React.FC = () => {
                   </div>
                 </AccordionItem>
                 <AccordionItem title="Ingredients" className="border-b border-[#f0f0f0]">
-                  <div className="py-[16px] text-[#6b6b6b] leading-[1.7] text-[14px]">
-                    <p className="bg-[#fcfaf8] p-4 rounded-lg border border-[#e5e5e5]">
+                  <div className="py-[16px] text-[#63786A] leading-[1.7] text-[14px]">
+                    <p className="bg-[#fcfaf8] p-4 rounded-lg border border-[#E0D4BE]">
                       {selectedProduct.ingredients || "Pure Kashmiri saffron bio-extract particles, Aqua base pH 5.5, Organic Kashmiri Almond essentials, Squalene, Organic Aloe vera juice."}
                     </p>
                   </div>
                 </AccordionItem>
                 <AccordionItem title="How to Use" className="border-b border-[#f0f0f0]">
-                  <div className="py-[16px] text-[#6b6b6b] leading-[1.7] text-[14px]">
+                  <div className="py-[16px] text-[#63786A] leading-[1.7] text-[14px]">
                     <p>
                       {selectedProduct.howToUse || "Massage 3-5 drops delicately on fully damp clean skin or hair. Allow natural extracts to absorb completely overnight."}
                     </p>
                   </div>
                 </AccordionItem>
                 <AccordionItem title="Reviews" className="border-b border-[#f0f0f0]">
-                  <div className="py-[16px] text-[#6b6b6b] leading-[1.7] text-[14px]">
+                  <div className="py-[16px] text-[#63786A] leading-[1.7] text-[14px]">
                     <p>No reviews yet.</p>
                   </div>
                 </AccordionItem>
@@ -543,19 +543,19 @@ export const ProductDetailPage: React.FC = () => {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="relative w-full max-w-4xl bg-[#0F1411]/70 backdrop-blur-xl text-[#F7F2EA] p-6 sm:p-10 z-10 overflow-hidden rounded-3xl border border-white/10 flex flex-col items-center justify-center shadow-[0_25px_60px_-15px_rgba(201,162,39,0.25)]"
+              className="relative w-full max-w-4xl bg-[#0F1411]/70 backdrop-blur-xl text-[#F4EBDB] p-6 sm:p-10 z-10 overflow-hidden rounded-3xl border border-white/10 flex flex-col items-center justify-center shadow-[0_25px_60px_-15px_rgba(201,162,39,0.25)]"
             >
               {/* Close Button */}
               <button
                 onClick={() => setLightboxOpen(false)}
-                className="absolute top-4 right-4 bg-white/10 hover:bg-[#C9A227] hover:text-[#1F4D3A] text-white py-2.5 px-5 text-[11px] font-bold tracking-widest uppercase rounded-full transition-all cursor-pointer border-none shadow-lg z-30 font-sans"
+                className="absolute top-4 right-4 bg-white/10 hover:bg-[#B69355] hover:text-[#254936] text-white py-2.5 px-5 text-[11px] font-bold tracking-widest uppercase rounded-full transition-all cursor-pointer border-none shadow-lg z-30 font-sans"
               >
                 Close 3D View
               </button>
 
               {/* Title & Help Text */}
               <div className="text-center mb-4 z-20">
-                <h3 className="font-playfair text-xl sm:text-2xl font-bold text-[#C9A227] tracking-wider uppercase">
+                <h3 className="font-playfair text-xl sm:text-2xl font-bold text-[#B69355] tracking-wider uppercase">
                   {selectedProduct.name}
                 </h3>
                 <p className="text-xs text-gray-300 mt-1 font-mono uppercase tracking-widest">
@@ -586,7 +586,7 @@ export const ProductDetailPage: React.FC = () => {
               >
                 {/* 3D Light Source Highlights behind product */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 opacity-40">
-                  <div className="w-64 h-64 bg-[#C9A227]/20 rounded-full blur-[100px] animate-pulse" />
+                  <div className="w-64 h-64 bg-[#B69355]/20 rounded-full blur-[100px] animate-pulse" />
                 </div>
 
                 {/* 3D Image Canvas */}
@@ -611,7 +611,7 @@ export const ProductDetailPage: React.FC = () => {
                       transform: `translateZ(-50px) rotateX(90deg) translateY(40px)`,
                       opacity: Math.max(0.2, 0.7 - Math.abs(rotation.x)/100)
                     }}
-                    className="w-36 h-8 bg-black/40 rounded-full blur-md absolute bottom-12 transition-opacity"
+                    className="w-36 h-8 bg-[#254936]/40 rounded-full blur-md absolute bottom-12 transition-opacity"
                   />
                 </motion.div>
 
@@ -622,15 +622,15 @@ export const ProductDetailPage: React.FC = () => {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
-                      className="absolute inset-0 bg-black/40 backdrop-blur-xs flex flex-col items-center justify-center pointer-events-none z-20"
+                      className="absolute inset-0 bg-[#254936]/40 backdrop-blur-xs flex flex-col items-center justify-center pointer-events-none z-20"
                     >
                       <motion.div 
                         animate={{ x: [-20, 20, -20] }}
                         transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-                        className="flex items-center gap-6 text-[#C9A227] mb-3"
+                        className="flex items-center gap-6 text-[#B69355] mb-3"
                       >
                         <ArrowLeft className="w-8 h-8 stroke-[3]" />
-                        <span className="text-[11px] font-bold tracking-widest uppercase bg-[#C9A227] text-[#1F4D3A] px-4 py-2 rounded-full shadow-lg font-sans">
+                        <span className="text-[11px] font-bold tracking-widest uppercase bg-[#B69355] text-[#254936] px-4 py-2 rounded-full shadow-lg font-sans">
                           Swipe / Drag to Rotate
                         </span>
                         <ArrowRight className="w-8 h-8 stroke-[3]" />
@@ -653,7 +653,7 @@ export const ProductDetailPage: React.FC = () => {
                     setRotation({ x: 0, y: 0 });
                     setZoom(1);
                   }}
-                  className="bg-[#C9A227] text-[#1F4D3A] text-[10px] font-bold tracking-widest uppercase px-6 py-2.5 rounded-xl hover:scale-105 transition cursor-pointer border-none shadow-md font-sans"
+                  className="bg-[#B69355] text-[#254936] text-[10px] font-bold tracking-widest uppercase px-6 py-2.5 rounded-xl hover:scale-105 transition cursor-pointer border-none shadow-md font-sans"
                 >
                   Reset Perspective
                 </button>
@@ -666,7 +666,7 @@ export const ProductDetailPage: React.FC = () => {
               </div>
 
               {/* Quick angle stats */}
-              <span className="text-[9px] font-mono text-[#757575] uppercase tracking-widest mt-4">
+              <span className="text-[9px] font-mono text-[#63786A] uppercase tracking-widest mt-4">
                 Pitch: {Math.round(rotation.x)}&deg; &bull; Yaw: {Math.round(rotation.y)}&deg; &bull; Zoom: {zoom.toFixed(2)}x
               </span>
             </motion.div>
@@ -675,9 +675,9 @@ export const ProductDetailPage: React.FC = () => {
       </AnimatePresence>
 
       {/* MOBILE STICKY BOTTOM BAR */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-[#e5e5e5] p-4 z-40 flex items-center justify-between gap-4 pb-safe-bottom">
+      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-[#E0D4BE] p-4 z-40 flex items-center justify-between gap-4 pb-safe-bottom">
         <div className="flex flex-col text-left">
-          <span className="text-[18px] font-bold text-[#1F4D3A] font-sans">
+          <span className="text-[18px] font-bold text-[#254936] font-sans">
             Rs. {((currentPrice || 0) * quantity).toLocaleString()}
           </span>
         </div>
@@ -686,7 +686,7 @@ export const ProductDetailPage: React.FC = () => {
           <button
             onClick={handleAddToCart}
             disabled={isAdding || isOutOfStock}
-            className="w-full bg-[#0a0a0a] text-white disabled:bg-gray-200 disabled:text-[#757575] font-bold py-[14px] px-2 rounded-[12px] text-[13px] uppercase tracking-[1px] transition-colors duration-300 flex items-center justify-center gap-2 cursor-pointer font-sans"
+            className="w-full bg-[#254936] text-white disabled:bg-gray-200 disabled:text-[#63786A] font-bold py-[14px] px-2 rounded-[12px] text-[13px] uppercase tracking-[1px] transition-colors duration-300 flex items-center justify-center gap-2 cursor-pointer font-sans"
             id="add-to-cart-sticky-mobile-pdp"
           >
             {isAdding ? (

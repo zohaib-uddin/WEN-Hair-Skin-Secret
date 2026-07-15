@@ -16,7 +16,7 @@ import { VideoGuidesSection } from "../components/home/VideoGuidesSection";
 
 export const HomePage: React.FC = () => {
   return (
-    <div className="bg-white min-h-screen font-sans overflow-hidden">
+    <div className="bg-gradient-to-b from-[#F4EBDB]/40 to-white min-h-screen font-sans overflow-hidden">
       
       {/* 1. Hero Section */}
       <HeroSection />

@@ -1,13 +1,12 @@
 import React, { useRef } from "react";
 import { useShop } from "../../context/ShopContext";
 import { motion } from "motion/react";
+import img1 from "../../assets/images/wen 7.png";
+import img2 from "../../assets/images/wen 8.png";
+import img3 from "../../assets/images/wen 9.png";
 import { ArrowLeft, ArrowRight } 
 from "lucide-react";
 import { useScrollArrows } from "../../hooks/useScrollArrows";
-import img1 from "../../assets/images/wen 7.png"
-import img2 from "../../assets/images/wen 8.png"
-import img3 from "../../assets/images/wen 9.png"
-
 
 interface CategoryItem {
   name: string;
@@ -73,14 +72,14 @@ export const CategoriesShowcase: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center max-w-[600px] mx-auto mb-[24px] md:mb-[60px] flex flex-col items-center"
         >
-          <div className="w-[40px] h-[2px] bg-[#C9A227] mb-[8px] md:mb-[16px]" />
-          <span className="text-[#C9A227] text-[9px] md:text-[11px] font-bold tracking-[3px] uppercase block mb-[8px] md:mb-[16px]">
+          <div className="w-[40px] h-[2px] bg-[#B69355] mb-[8px] md:mb-[16px]" />
+          <span className="text-[#B69355] text-[9px] md:text-[11px] font-bold tracking-[3px] uppercase block mb-[8px] md:mb-[16px]">
             Shop by Category
           </span>
-          <h2 className="font-playfair text-[20px] md:text-[44px] font-bold text-[#1F4D3A] tracking-[-0.01em]">
+          <h2 className="font-playfair text-[20px] md:text-[44px] font-bold text-[#254936] tracking-[-0.01em]">
             Formulated Essentials
           </h2>
-          <p className="text-[11px] md:text-[15px] text-[#6b6b6b] leading-[1.6] md:leading-[1.7] mt-[6px] md:mt-[12px] max-w-[500px]">
+          <p className="text-[11px] md:text-[15px] text-[#63786A] leading-[1.6] md:leading-[1.7] mt-[6px] md:mt-[12px] max-w-[500px]">
             Explore our curated collections of clinical botanical formulations
             tailored to your unique skin and hair needs.
           </p>
@@ -90,7 +89,7 @@ export const CategoriesShowcase: React.FC = () => {
         <div className="relative group">
           <button
             onClick={scrollLeft}
-            className={`absolute left-0 md:-left-6 top-1/2 -translate-y-1/2 z-10 w-10 md:w-12 h-10 md:h-12 flex items-center justify-center text-[#1F4D3A] transition-all duration-300 cursor-pointer ${
+            className={`absolute left-0 md:-left-6 top-1/2 -translate-y-1/2 z-10 w-10 md:w-12 h-10 md:h-12 flex items-center justify-center text-[#254936] transition-all duration-300 cursor-pointer ${
               isAtStart ? "opacity-0 pointer-events-none translate-x-[-10px]" : "opacity-100 translate-x-0"
             }`}
             aria-label="Scroll left"
@@ -128,10 +127,10 @@ export const CategoriesShowcase: React.FC = () => {
                 </div>
                 
                 <div className="bg-white p-[16px] md:p-[24px] flex flex-col items-center text-center z-10 transition-colors duration-300 group-hover:bg-[#f9f9f9]">
-                  <h3 className="font-playfair text-[20px] md:text-[28px] font-bold text-[#1F4D3A] mb-[4px] md:mb-[8px]">
+                  <h3 className="font-playfair text-[20px] md:text-[28px] font-bold text-[#254936] mb-[4px] md:mb-[8px]">
                     {cat.name}
                   </h3>
-                  <span className="text-[#C9A227] text-[10px] md:text-[12px] uppercase font-bold tracking-[1px] flex items-center justify-center group-hover:translate-x-1 transition-transform duration-300">
+                  <span className="text-[#B69355] text-[10px] md:text-[12px] uppercase font-bold tracking-[1px] flex items-center justify-center group-hover:translate-x-1 transition-transform duration-300">
                     Shop Now <span className="ml-2">→</span>
                   </span>
                 </div>
@@ -141,7 +140,7 @@ export const CategoriesShowcase: React.FC = () => {
 
           <button
             onClick={scrollRight}
-            className={`absolute right-0 md:-right-6 top-1/2 -translate-y-1/2 z-10 w-10 md:w-12 h-10 md:h-12 flex items-center justify-center text-[#1F4D3A] transition-all duration-300 cursor-pointer ${
+            className={`absolute right-0 md:-right-6 top-1/2 -translate-y-1/2 z-10 w-10 md:w-12 h-10 md:h-12 flex items-center justify-center text-[#254936] transition-all duration-300 cursor-pointer ${
               isAtEnd ? "opacity-0 pointer-events-none translate-x-[10px]" : "opacity-100 translate-x-0"
             }`}
             aria-label="Scroll right"

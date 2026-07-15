@@ -16,7 +16,7 @@ export const Certifications: React.FC = () => {
   const items = [...marqueeItems, ...marqueeItems, ...marqueeItems];
 
   return (
-    <section className="bg-[#F7F2EA] border-y border-[#C9A227]/20 font-sans overflow-hidden h-[40px] md:h-[48px] flex items-center">
+    <section className="bg-[#F4EBDB] border-y border-[#B69355]/20 font-sans overflow-hidden h-[40px] md:h-[48px] flex items-center">
       <style>{`
         @keyframes marquee {
           0% { transform: translateX(0); }
@@ -34,11 +34,11 @@ export const Certifications: React.FC = () => {
         <div className="animate-marquee flex items-center">
           {items.map((item, idx) => (
             <div key={idx} className="flex items-center mx-[24px]">
-              <ShieldCheck className="w-[20px] h-[20px] text-[#C9A227] mr-[12px]" />
-              <span className="text-[13px] text-[#1F4D3A] font-medium tracking-[0.5px]">
+              <ShieldCheck className="w-[20px] h-[20px] text-[#B69355] mr-[12px]" />
+              <span className="text-[13px] text-[#254936] font-medium tracking-[0.5px]">
                 {item}
               </span>
-              <div className="w-[4px] h-[4px] rounded-full bg-[#C9A227] ml-[48px]" />
+              <div className="w-[4px] h-[4px] rounded-full bg-[#B69355] ml-[48px]" />
             </div>
           ))}
         </div>

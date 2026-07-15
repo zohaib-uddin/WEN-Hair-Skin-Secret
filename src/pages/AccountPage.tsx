@@ -295,8 +295,8 @@ export const AccountPage: React.FC = () => {
 
   if (authLoading) {
     return (
-      <div className="min-h-screen bg-[#F7F2EA] flex items-center justify-center">
-        <div className="text-[#1F4D3A] font-playfair font-bold text-[24px] uppercase tracking-widest animate-pulse">
+      <div className="min-h-screen bg-gradient-to-b from-[#F4EBDB]/30 to-white flex items-center justify-center">
+        <div className="text-[#254936] font-playfair font-bold text-[24px] uppercase tracking-widest animate-pulse">
           Loading Account...
         </div>
       </div>
@@ -309,7 +309,7 @@ export const AccountPage: React.FC = () => {
 
   if (selectedOrder) {
     return (
-      <div className="min-h-screen bg-[#F7F2EA] pt-[120px] pb-[60px] px-[24px]">
+      <div className="min-h-screen bg-gradient-to-b from-[#F4EBDB]/30 to-white pt-[120px] pb-[60px] px-[24px]">
         <OrderDetailView
           order={selectedOrder}
           onBack={() => setSelectedOrder(null)}
@@ -321,7 +321,7 @@ export const AccountPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#F7F2EA] pt-[80px] md:pt-[120px] pb-[40px] md:pb-[60px] px-[16px] md:px-[24px] font-sans">
+    <div className="min-h-screen bg-gradient-to-b from-[#F4EBDB]/30 to-white pt-[80px] md:pt-[120px] pb-[40px] md:pb-[60px] px-[16px] md:px-[24px] font-sans">
       <div className="max-w-[1200px] mx-auto">
         <div className="flex flex-col lg:flex-row gap-[24px] md:gap-[40px]">
           {/* Sidebar */}

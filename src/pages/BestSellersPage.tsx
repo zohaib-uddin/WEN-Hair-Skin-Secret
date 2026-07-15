@@ -24,7 +24,7 @@ export default function BestSellersPage() {
   }, [products]);
 
   return (
-    <div className="bg-[#FAF9F6] text-[#1F4D3A] min-h-screen pt-20 pb-24 font-sans selection:bg-[#1F4D3A] selection:text-white">
+    <div className="bg-gradient-to-b from-[#F4EBDB]/30 to-white text-[#254936] min-h-screen pt-20 pb-24 font-sans selection:bg-[#254936] selection:text-white">
       <main className="flex-1 w-full flex flex-col">
         {/* Search Header trigger banner equivalent for Best Sellers */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -34,13 +34,13 @@ export default function BestSellersPage() {
             transition={{ duration: 0.8 }}
             className="text-left max-w-4xl space-y-3 mb-16"
           >
-            <span className="text-[#C9A227] text-[10px] sm:text-xs font-bold tracking-[0.25em] block uppercase">
+            <span className="text-[#B69355] text-[10px] sm:text-xs font-bold tracking-[0.25em] block uppercase">
               Top Rated Excellence
             </span>
-            <h1 className="font-playfair text-4xl sm:text-5xl font-extrabold text-[#1F4D3A] leading-tight">
+            <h1 className="font-playfair text-4xl sm:text-5xl font-extrabold text-[#254936] leading-tight">
               Best Sellers
             </h1>
-            <p className="text-sm sm:text-base text-gray-500 font-light max-w-2xl leading-relaxed">
+            <p className="text-sm sm:text-base text-[#63786A] font-light max-w-2xl leading-relaxed">
               Discover our most loved, tried, and true natural skincare and hair care products for the best results.
             </p>
           </motion.div>
@@ -62,7 +62,7 @@ export default function BestSellersPage() {
               ))}
             </div>
           ) : (
-            <div className="text-center py-24 text-[#757575] font-medium">
+            <div className="text-center py-24 text-[#63786A] font-medium">
               <p>No best sellers found at the moment.</p>
             </div>
           )}

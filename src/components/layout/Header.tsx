@@ -226,7 +226,7 @@ export const Header: React.FC = () => {
         }
 
         .nav-icon {
-          color: #1F4D3A;
+          color: #254936;
           transition: transform 0.3s ease, color 0.3s ease;
         }
         .nav-icon:hover {
@@ -236,7 +236,7 @@ export const Header: React.FC = () => {
       `}</style>
       <header className="w-full z-50 font-sans" id="main-app-header-bar">
         {/* TOP ANNOUNCEMENT BAR */}
-        <div className="w-full bg-[#1F4D3A] text-white py-[2px] px-4 overflow-hidden relative h-[24px] md:h-[28px] flex items-center justify-center">
+        <div className="w-full bg-[#254936] text-white py-[2px] px-4 overflow-hidden relative h-[24px] md:h-[28px] flex items-center justify-center">
           <div className="text-center font-medium text-[9px] md:text-[11px] whitespace-nowrap overflow-hidden text-ellipsis tracking-wide text-white flex items-center justify-center gap-2">
             <span>{announcements[announcementIndex]}</span>
           </div>
@@ -272,7 +272,7 @@ export const Header: React.FC = () => {
                 >
                   WEN
                 </span>
-                <span className="font-sans font-semibold uppercase text-[9px] lg:text-[10px] tracking-[2px] text-[#C9A227] mt-[-2px] whitespace-nowrap">
+                <span className="font-sans font-semibold uppercase text-[9px] lg:text-[10px] tracking-[2px] text-[#B69355] mt-[-2px] whitespace-nowrap">
                   HAIR & SKIN SECRET
                 </span>
               </div>
@@ -292,7 +292,7 @@ export const Header: React.FC = () => {
                       <svg viewBox="0 0 40 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full overflow-visible drop-shadow-md">
                         <g className="animate-bottle-tilt" style={{ transformOrigin: '20px 60px' }}>
                           {/* Bottle Neck */}
-                          <rect x="16" y="24" width="8" height="6" fill="#e5e5e5" />
+                          <rect x="16" y="24" width="8" height="6" fill="#E0D4BE" />
                           {/* Bottle Body */}
                           <path d="M16 30 H24 L30 38 V76 C30 78.2, 28.2 80, 26 80 H14 C11.8 80, 10 78.2, 10 76 V38 L16 30 Z" fill={activeTheme.themeColor} fillOpacity="0.85" stroke="#ffffff" strokeWidth="1" />
                           {/* Bottle Reflection */}
@@ -300,7 +300,7 @@ export const Header: React.FC = () => {
                           {/* Bottle Label */}
                           <rect x="14" y="45" width="12" height="20" fill="#ffffff" rx="1" />
                           <rect x="16" y="48" width="8" height="2" fill={activeTheme.themeColor} />
-                          <rect x="16" y="52" width="5" height="1" fill="#e5e5e5" />
+                          <rect x="16" y="52" width="5" height="1" fill="#E0D4BE" />
 
                           {/* Cap & Dropper Pipette Group */}
                           <g className="animate-cap-unscrew" style={{ transformOrigin: '20px 24px' }}>
@@ -327,7 +327,7 @@ export const Header: React.FC = () => {
                 <button
                   key={idx}
                   onClick={() => navigate(item === 'Home' ? 'home' : 'shop')}
-                  className="relative group text-[13px] font-medium uppercase tracking-[1px] text-[#1F4D3A] py-2 focus:outline-none"
+                  className="relative group text-[13px] font-medium uppercase tracking-[1px] text-[#254936] py-2 focus:outline-none"
                 >
                   {item}
                   <span 
@@ -343,7 +343,7 @@ export const Header: React.FC = () => {
                 onMouseEnter={() => setMegaMenuOpen(true)}
                 onMouseLeave={() => setMegaMenuOpen(false)}
               >
-                <button className="relative group text-[13px] font-medium uppercase tracking-[1px] text-[#1F4D3A] py-2 flex items-center gap-1 focus:outline-none h-full">
+                <button className="relative group text-[13px] font-medium uppercase tracking-[1px] text-[#254936] py-2 flex items-center gap-1 focus:outline-none h-full">
                   Categories
                   <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${megaMenuOpen ? "rotate-180" : ""}`} />
                   <span 
@@ -364,12 +364,12 @@ export const Header: React.FC = () => {
                       <div className="p-[32px] grid grid-cols-3 gap-8">
                         {/* Categories Column */}
                         <div className="flex flex-col">
-                          <h4 className="font-playfair font-bold text-[#1F4D3A] text-[22px] mb-[16px]">Shop By Category</h4>
+                          <h4 className="font-playfair font-bold text-[#254936] text-[22px] mb-[16px]">Shop By Category</h4>
                           <img src={img1} alt="Categories" className="w-[200px] h-[150px] object-cover rounded-lg mb-[16px]" referrerPolicy="no-referrer" />
                           <ul className="flex flex-col text-left">
                             {(navCategories.length > 0 ? navCategories : [{id: 1, name: 'Hair Care'}, {id: 2, name: 'Skin Care'}, {id: 3, name: 'Body Care'}]).map((cat) => (
                                 <li key={cat.id} className="border-b border-[#f5f5f5] last:border-0">
-                                  <button onClick={() => handleCategoryNav(cat.name)} className="text-[13px] text-[#1a1a1a] hover:text-[#C9A227] transition-colors py-[6px] w-full text-left">
+                                  <button onClick={() => handleCategoryNav(cat.name)} className="text-[13px] text-[#254936] hover:text-[#B69355] transition-colors py-[6px] w-full text-left">
                                     {cat.name}
                                   </button>
                                 </li>
@@ -378,12 +378,12 @@ export const Header: React.FC = () => {
                         </div>
                         {/* Concerns Column */}
                         <div className="flex flex-col">
-                          <h4 className="font-playfair font-bold text-[#1F4D3A] text-[22px] mb-[16px]">Shop By Concern</h4>
+                          <h4 className="font-playfair font-bold text-[#254936] text-[22px] mb-[16px]">Shop By Concern</h4>
                           <img src={img2} alt="Concerns" className="w-[200px] h-[150px] object-cover rounded-lg mb-[16px]" referrerPolicy="no-referrer" />
                           <ul className="flex flex-col text-left h-[250px] overflow-y-auto pr-2 custom-scrollbar">
                              {(navTargets.length > 0 ? navTargets : [{id: 1, name: 'Hair Fall'}, {id: 2, name: 'Acne & Blemishes'}]).map((target) => (
                                 <li key={target.id} className="border-b border-[#f5f5f5] last:border-0">
-                                  <button onClick={() => handleConcernNav(target.name)} className="text-[13px] text-[#1a1a1a] hover:text-[#C9A227] transition-colors py-[6px] w-full text-left">
+                                  <button onClick={() => handleConcernNav(target.name)} className="text-[13px] text-[#254936] hover:text-[#B69355] transition-colors py-[6px] w-full text-left">
                                     {target.name}
                                   </button>
                                 </li>
@@ -391,13 +391,13 @@ export const Header: React.FC = () => {
                           </ul>
                         </div>
                         {/* Promise Column */}
-                        <div className="bg-[#F7F2EA] rounded-xl p-[24px] flex flex-col text-left">
-                          <Sparkles className="w-[32px] h-[32px] text-[#C9A227] mb-[12px]" />
-                          <h4 className="font-playfair text-[20px] text-[#1F4D3A] mb-[12px]">The Wen Promise</h4>
-                          <p className="text-[13px] text-[#6b6b6b] leading-[1.7] mb-auto">
+                        <div className="bg-[#F4EBDB] rounded-xl p-[24px] flex flex-col text-left">
+                          <Sparkles className="w-[32px] h-[32px] text-[#B69355] mb-[12px]" />
+                          <h4 className="font-playfair text-[20px] text-[#254936] mb-[12px]">The Wen Promise</h4>
+                          <p className="text-[13px] text-[#63786A] leading-[1.7] mb-auto">
                             Every Wen formulation is crafted with 100% natural ingredients, free from sulfates, parabens, and harsh chemicals. Designed specifically for Pakistani hair and skin.
                           </p>
-                          <button onClick={() => { setMegaMenuOpen(false); navigate('about'); }} className="text-[#C9A227] text-[12px] font-bold uppercase tracking-wider mt-[16px] text-left hover:brightness-110">
+                          <button onClick={() => { setMegaMenuOpen(false); navigate('about'); }} className="text-[#B69355] text-[12px] font-bold uppercase tracking-wider mt-[16px] text-left hover:brightness-110">
                             Discover Our Story →
                           </button>
                         </div>
@@ -411,7 +411,7 @@ export const Header: React.FC = () => {
                 <button
                   key={idx}
                   onClick={() => navigate(item === 'Our Story' ? 'about' : item.toLowerCase().replace(' ', '-'))}
-                  className="relative group text-[13px] font-medium uppercase tracking-[1px] text-[#1F4D3A] py-2 focus:outline-none"
+                  className="relative group text-[13px] font-medium uppercase tracking-[1px] text-[#254936] py-2 focus:outline-none"
                 >
                   {item}
                   <span 
@@ -430,7 +430,7 @@ export const Header: React.FC = () => {
               <div className="flex items-center space-x-[12px] md:space-x-[16px] lg:space-x-[20px]">
                 <button
                   onClick={() => navigate('track-order')}
-                  className="hidden xl:inline-block text-[13px] uppercase font-medium border border-[#1F4D3A] text-[#1F4D3A] hover:text-white px-4 py-1.5 transition-all duration-500 focus:outline-none hover:bg-[#1F4D3A]"
+                  className="hidden xl:inline-block text-[13px] uppercase font-medium border border-[#254936] text-[#254936] hover:text-white px-4 py-1.5 transition-all duration-500 focus:outline-none hover:bg-[#254936]"
                 >
                   Track Order
                 </button>

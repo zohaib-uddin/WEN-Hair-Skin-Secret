@@ -76,7 +76,7 @@ export const WenPhilosophy: React.FC = () => {
   ];
 
   return (
-    <section className="bg-[#F7F2EA] pt-[24px] md:pt-[60px] pb-[40px] md:pb-[120px] font-sans">
+    <section className="bg-[#F4EBDB] pt-[24px] md:pt-[60px] pb-[40px] md:pb-[120px] font-sans">
       <div className="max-w-[1280px] mx-auto px-[16px] md:px-[24px]">
         
         <motion.div
@@ -86,11 +86,11 @@ export const WenPhilosophy: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center max-w-[600px] mx-auto mb-[24px] md:mb-[60px] flex flex-col items-center"
         >
-          <div className="w-[40px] h-[2px] bg-[#C9A227] mb-[8px] md:mb-[16px]" />
-          <h2 className="font-playfair text-[20px] md:text-[44px] font-bold text-[#1F4D3A] tracking-[-0.01em]">
+          <div className="w-[40px] h-[2px] bg-[#B69355] mb-[8px] md:mb-[16px]" />
+          <h2 className="font-playfair text-[20px] md:text-[44px] font-bold text-[#254936] tracking-[-0.01em]">
             The Wen Philosophy
           </h2>
-          <p className="text-[11px] md:text-[15px] text-[#6b6b6b] leading-[1.6] md:leading-[1.7] mt-[6px] md:mt-[12px] max-w-[500px]">
+          <p className="text-[11px] md:text-[15px] text-[#63786A] leading-[1.6] md:leading-[1.7] mt-[6px] md:mt-[12px] max-w-[500px]">
             Rooted in clinical science, enriched by nature.
           </p>
         </motion.div>
@@ -99,7 +99,7 @@ export const WenPhilosophy: React.FC = () => {
         <div className="relative group">
           <button
             onClick={scrollLeft}
-            className={`absolute left-0 md:-left-6 top-1/2 -translate-y-1/2 z-10 w-10 md:w-12 h-10 md:h-12 flex items-center justify-center text-[#1F4D3A] transition-all duration-300 cursor-pointer ${
+            className={`absolute left-0 md:-left-6 top-1/2 -translate-y-1/2 z-10 w-10 md:w-12 h-10 md:h-12 flex items-center justify-center text-[#254936] transition-all duration-300 cursor-pointer ${
               isAtStart ? "opacity-0 pointer-events-none translate-x-[-10px]" : "opacity-100 translate-x-0"
             }`}
             aria-label="Scroll left"
@@ -122,13 +122,13 @@ export const WenPhilosophy: React.FC = () => {
               className="w-[75vw] shrink-0 md:w-auto snap-center flex flex-col items-center bg-white md:bg-transparent p-[24px] md:p-0 rounded-[16px] md:rounded-none"
               onClick={() => navigate('shop')}
             >
-              <h3 className="font-playfair text-[48px] md:text-[64px] font-bold text-[#C9A227] mb-[8px] leading-none">
+              <h3 className="font-playfair text-[48px] md:text-[64px] font-bold text-[#B69355] mb-[8px] leading-none">
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} />
               </h3>
-              <span className="text-[#1F4D3A] text-[11px] md:text-[12px] font-bold uppercase tracking-[2px] mb-[8px] md:mb-[12px]">
+              <span className="text-[#254936] text-[11px] md:text-[12px] font-bold uppercase tracking-[2px] mb-[8px] md:mb-[12px]">
                 {stat.label}
               </span>
-              <p className="text-[12px] md:text-[13px] text-[#6b6b6b] leading-[1.7] max-w-[280px]">
+              <p className="text-[12px] md:text-[13px] text-[#63786A] leading-[1.7] max-w-[280px]">
                 {stat.description}
               </p>
             </motion.div>
@@ -137,7 +137,7 @@ export const WenPhilosophy: React.FC = () => {
 
           <button
             onClick={scrollRight}
-            className={`absolute right-0 md:-right-6 top-1/2 -translate-y-1/2 z-10 w-10 md:w-12 h-10 md:h-12 flex items-center justify-center text-[#1F4D3A] transition-all duration-300 cursor-pointer ${
+            className={`absolute right-0 md:-right-6 top-1/2 -translate-y-1/2 z-10 w-10 md:w-12 h-10 md:h-12 flex items-center justify-center text-[#254936] transition-all duration-300 cursor-pointer ${
               isAtEnd ? "opacity-0 pointer-events-none translate-x-[10px]" : "opacity-100 translate-x-0"
             }`}
             aria-label="Scroll right"

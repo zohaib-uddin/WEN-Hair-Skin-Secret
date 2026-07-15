@@ -1,12 +1,12 @@
 import React, { useState, useRef } from "react";
 import { motion } from "motion/react";
+import vid1 from "../../assets/images/wen vid1.mp4";
+import vid2 from "../../assets/images/wen vid2.mp4";
+import vid3 from "../../assets/images/wen vid3.mp4";
+
 import { Play, Volume2, VolumeX, ArrowLeft, ArrowRight } 
 from "lucide-react";
 import { useScrollArrows } from "../../hooks/useScrollArrows";
-import vid1 from "../../assets/images/wen vid1.mp4"
-import vid2 from "../../assets/images/wen vid2.mp4"
-import vid3 from "../../assets/images/wen vid3.mp4"
-
 
 export const VideoGuidesSection: React.FC = () => {
   const [playingId, setPlayingId] = useState<number | null>(null);
@@ -65,13 +65,13 @@ export const VideoGuidesSection: React.FC = () => {
     <section className="bg-white py-[40px] md:py-[80px] lg:py-[120px] font-sans overflow-hidden">
       <div className="max-w-[1280px] mx-auto px-[16px] md:px-[24px]">
         <div className="text-center max-w-[700px] mx-auto mb-[32px] md:mb-[60px]">
-          <span className="text-[9px] md:text-[11px] font-bold uppercase tracking-[3px] text-[#C9A227] block mb-[8px] md:mb-[16px]">
+          <span className="text-[9px] md:text-[11px] font-bold uppercase tracking-[3px] text-[#B69355] block mb-[8px] md:mb-[16px]">
             Masterclass
           </span>
-          <h2 className="font-playfair text-[24px] md:text-[48px] font-bold text-[#1F4D3A] tracking-[-0.02em] leading-[1.1] mb-[12px] md:mb-[24px]">
+          <h2 className="font-playfair text-[24px] md:text-[48px] font-bold text-[#254936] tracking-[-0.02em] leading-[1.1] mb-[12px] md:mb-[24px]">
             The Wen Rituals
           </h2>
-          <p className="text-[11px] md:text-[15px] text-[#6b6b6b] leading-[1.6] md:leading-[1.7]">
+          <p className="text-[11px] md:text-[15px] text-[#63786A] leading-[1.6] md:leading-[1.7]">
             Watch our experts demonstrate the best techniques to apply Wen's natural skincare products for glowing results.
           </p>
         </div>
@@ -79,7 +79,7 @@ export const VideoGuidesSection: React.FC = () => {
         <div className="relative group">
           <button
             onClick={scrollLeft}
-            className={`absolute left-0 md:-left-6 top-1/2 -translate-y-1/2 z-10 w-10 md:w-12 h-10 md:h-12 flex items-center justify-center text-[#1F4D3A] transition-all duration-300 cursor-pointer ${
+            className={`absolute left-0 md:-left-6 top-1/2 -translate-y-1/2 z-10 w-10 md:w-12 h-10 md:h-12 flex items-center justify-center text-[#254936] transition-all duration-300 cursor-pointer ${
               isAtStart ? "opacity-0 pointer-events-none translate-x-[-10px]" : "opacity-100 translate-x-0"
             }`}
             aria-label="Scroll left"
@@ -130,9 +130,9 @@ export const VideoGuidesSection: React.FC = () => {
                     {/* Play Button Overlay (shown when not playing) */}
                     {!isPlaying && (
                       <>
-                        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300" />
+                        <div className="absolute inset-0 bg-[#254936]/20 group-hover:bg-[#254936]/10 transition-colors duration-300" />
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[48px] md:w-[60px] h-[48px] md:h-[60px] bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300 shadow-xl">
-                          <Play className="w-[16px] md:w-[20px] h-[16px] md:h-[20px] text-[#1F4D3A] fill-[#1F4D3A] ml-1" />
+                          <Play className="w-[16px] md:w-[20px] h-[16px] md:h-[20px] text-[#254936] fill-[#254936] ml-1" />
                         </div>
                       </>
                     )}
@@ -140,7 +140,7 @@ export const VideoGuidesSection: React.FC = () => {
                     {/* Volume Control Overlay (shown when playing) */}
                     {isPlaying && (
                       <div 
-                        className="absolute bottom-4 right-4 w-[36px] md:w-[40px] h-[36px] md:h-[40px] bg-black/50 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-black/70 transition-colors z-10"
+                        className="absolute bottom-4 right-4 w-[36px] md:w-[40px] h-[36px] md:h-[40px] bg-[#254936]/50 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-[#254936]/70 transition-colors z-10"
                         onClick={handleToggleMute}
                       >
                         {isMuted ? <VolumeX className="w-4 md:w-5 h-4 md:h-5" /> : <Volume2 className="w-4 md:w-5 h-4 md:h-5" />}
@@ -148,10 +148,10 @@ export const VideoGuidesSection: React.FC = () => {
                     )}
                   </div>
 
-                  <h3 className="font-playfair text-[18px] md:text-[20px] font-bold text-[#1F4D3A] mb-[8px] md:mb-[12px] group-hover:text-[#C9A227] transition-colors">
+                  <h3 className="font-playfair text-[18px] md:text-[20px] font-bold text-[#254936] mb-[8px] md:mb-[12px] group-hover:text-[#B69355] transition-colors">
                     {video.title}
                 </h3>
-                <p className="text-[14px] text-[#6b6b6b] leading-[1.6]">
+                <p className="text-[14px] text-[#63786A] leading-[1.6]">
                   {video.description}
                 </p>
               </motion.div>
@@ -161,7 +161,7 @@ export const VideoGuidesSection: React.FC = () => {
 
           <button
             onClick={scrollRight}
-            className={`absolute right-0 md:-right-6 top-1/2 -translate-y-1/2 z-10 w-10 md:w-12 h-10 md:h-12 flex items-center justify-center text-[#1F4D3A] transition-all duration-300 cursor-pointer ${
+            className={`absolute right-0 md:-right-6 top-1/2 -translate-y-1/2 z-10 w-10 md:w-12 h-10 md:h-12 flex items-center justify-center text-[#254936] transition-all duration-300 cursor-pointer ${
               isAtEnd ? "opacity-0 pointer-events-none translate-x-[10px]" : "opacity-100 translate-x-0"
             }`}
             aria-label="Scroll right"

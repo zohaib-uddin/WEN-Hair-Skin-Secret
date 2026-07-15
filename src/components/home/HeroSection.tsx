@@ -146,7 +146,7 @@ export const HeroSection: React.FC = () => {
 
   return (
     <section
-      className="relative w-full md:h-[80vh] overflow-hidden bg-black"
+      className="relative w-full md:h-[80vh] overflow-hidden bg-#254936"
       id="hero-luxury-section"
       role="region"
       aria-label="Product Showcase"
