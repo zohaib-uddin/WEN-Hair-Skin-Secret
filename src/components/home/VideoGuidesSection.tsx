@@ -3,6 +3,9 @@ import { motion } from "motion/react";
 import vid1 from "../../assets/images/wen vid1.mp4";
 import vid2 from "../../assets/images/wen vid2.mp4";
 import vid3 from "../../assets/images/wen vid3.mp4";
+import vid4 from "../../assets/images/wen vid4.mp4";
+import vid5 from "../../assets/images/wen vid5.mp4";
+import vid6 from "../../assets/images/wen vid6.mp4";
 
 import { Play, Volume2, VolumeX, ArrowLeft, ArrowRight } 
 from "lucide-react";
@@ -15,23 +18,41 @@ export const VideoGuidesSection: React.FC = () => {
   const { isAtStart, isAtEnd } = useScrollArrows(scrollContainerRef);
 
   const videos = [
-    {
+     {
       id: 1,
-      title: "How to Apply Hair Growth Serum",
-      description: "Learn the proper technique to massage the serum into your scalp for maximum absorption and root stimulation.",
+      title: "Unlock Your Glow with Wen-C Vitamin C Serum",
+      description: "Discover how Wen-C Serum fights dullness and uneven tone. Packed with Vitamin C, Glutathione, and Ferulic Acid, this powerful antioxidant blend restores radiance and protects your skin for a brighter complexion.",
       videoUrl: vid1,
     },
-    {
+     {
       id: 2,
-      title: "The Perfect Skincare Routine",
-      description: "Step-by-step guide on layering our botanical extracts to lock in moisture and clear blemishes effectively.",
+      title: "Clear Skin Journey with Wen Acne Control Serum",
+      description: "Learn how to tackle acne, marks, and oiliness effectively. Formulated with Mandelic Acid, Tea Tree, and Neem, this serum targets blemishes and balances skin for a smooth, clear complexion over time.",
       videoUrl: vid2,
     },
-    {
+     {
       id: 3,
-      title: "Deep Conditioning Treatment",
-      description: "Discover how to revive dry, damaged hair using our rich, organic hair masks and treatments.",
+      title: "Fade Dark Spots with Wenglow Glutathione Serum",
+      description: "Say goodbye to dullness and uneven tone. Powered by Glutathione, Vitamin C, and Niacinamide, this advanced brightening serum fades dark spots and hydrates your skin for a radiant, even complexion.",
       videoUrl: vid3,
+    },
+     {
+      id: 4,
+      title: "Affordable Anti-Aging with WenAging Serum",
+      description: "Discover a budget-friendly way to fight wrinkles and age spots. Enriched with Pentapeptides and Hyaluronic Acid, this serum boosts collagen production for hydrated, youthful-looking skin without the high price tag.",
+      videoUrl: vid4,
+    },
+     {
+      id: 5,
+      title: "Relief from Itching with Wen Scabi Soap",
+      description: "Struggling with itching or fungal infections? Discover how Wen Scabi Soap deeply cleanses the skin to eliminate scabies and soothe irritation for lasting comfort and relief.",
+      videoUrl: vid5,
+    },
+     {
+      id: 6,
+      title: "Gentle Cleansing for Oily & Acne-Prone Skin",
+      description: "Looking for a gentle cleanser that fights grease? Wen Acni Soap removes excess oil and daily impurities without harshness, leaving your acne-prone skin feeling fresh, clean, and balanced.",
+      videoUrl: vid6,
     }
   ];
 

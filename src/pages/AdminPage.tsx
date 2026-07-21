@@ -580,31 +580,30 @@ export const AdminPage: React.FC = () => {
     );
   };
 
-  const handleStartAddProduct = () => {
-    setEditingProduct({
-      id: `wen-${Date.now()}`,
-      name: "",
-      category: "Hair Oil",
-      price: 2500,
-      originalPrice: 3000,
-      rating: 5.0,
-      reviewCount: 0,
-      image: img_4xji1u,
-      description: "",
-      keyBenefits: [],
-      potencyExplanation: "",
-      idealFor: [],
-      howToUse: "",
-      ingredients: "",
-      concern: "Dullness & Glow",
-      variants: ["100ml"],
-      selectedVariant: "100ml",
-      isBestSeller: false,
-      isNewArrival: true,
-      reviewsList: []
-    });
-    setIsEditingProduct(true);
-  };
+ const handleStartAddProduct = () => {
+  setEditingProduct({
+    id: `wen-${Date.now()}`,
+    name: "",
+    category: "Hair Oil",
+    price: 2500,
+    originalPrice: 3000,
+    rating: 5.0,
+    reviewCount: 0,
+    description: "",
+    keyBenefits: [],
+    potencyExplanation: "",
+    idealFor: [],
+    howToUse: "",
+    ingredients: "",
+    concern: "Dullness & Glow",
+    variants: ["100ml"],
+    selectedVariant: "100ml",
+    isBestSeller: false,
+    isNewArrival: true,
+    reviewsList: []
+  });
+  setIsEditingProduct(true);
+};
 
   const handleStartEditProduct = (prod: Product) => {
     setEditingProduct(prod);
@@ -1808,7 +1807,7 @@ export const AdminPage: React.FC = () => {
                       className="px-5 py-3 bg-[#1F4D3A] hover:bg-[#153427] text-white text-xs font-bold uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md"
                     >
                       <Plus className="w-4.5 h-4.5 text-[#C9A227]" />
-                      <span>Add Formulation</span>
+                      <span>Add Product</span>
                     </button>
                   </div>
 

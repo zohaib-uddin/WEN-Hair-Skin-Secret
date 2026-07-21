@@ -5,12 +5,7 @@ import { useShop } from "../../context/ShopContext";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 // Images
-import img1 from '../../assets/images/caraousel1.jpg'
-import img2 from '../../assets/images/caraousel2.jpg'
-import img3 from '../../assets/images/caraousel3.png'
-import img4 from '../../assets/images/caraousel4.png'
-
-import video1 from '../../assets/images/banner video1.mp4'
+import img1 from '../../assets/images/banner1.jpg'
 
 const slides = [
   {
@@ -25,54 +20,6 @@ const slides = [
     color: '#E11D48',
     duration: 5000
   },
-  {
-    id: 2,
-    type: 'image',
-    subtitle: 'Acne Control',
-    title: 'Clear Skin \n Starts Here',
-    description: 'Fights acne and pimples. Constricts open pores, boosts collagen, maintains natural pH balance and oil levels.',
-    productName: 'Wen Acne',
-    price: 'Rs. 1,650',
-    mediaUrl: img2,
-    color: '#0284C7',
-    duration: 5000
-  },
-  {
-    id: 3,
-    type: 'image',  
-    subtitle: 'Anti-Aging',
-    title: 'Turn Back Time \n Naturally',
-    description: 'Removes wrinkles & black spots for visibly younger looking skin. Minimizes age spots and provides deep hydration.',
-    productName: 'WenAging',
-    price: 'Rs. 1,999',
-    mediaUrl: img3,
-    color: '#1E3A8A',
-    duration: 5000
-  },
-  {
-    id: 4,
-    type: 'image',
-    subtitle: 'Advanced Brightening',
-    title: 'Superb \n Antioxidant',
-    description: 'Brightens skin complexion, revitalizes uneven tone & texture. Helps protect skin with antioxidant power of Vitamin C.',
-    productName: 'Wen-C',
-    price: 'Rs. 1,550',
-    mediaUrl: img4,
-    color: '#EA580C',
-    duration: 5000
-  },
-  {
-    id: 5,
-    type: 'video',
-    subtitle: 'The Secret',
-    title: 'Nature Meets \n Science',
-    description: 'Discover the meticulous process behind our luxury botanical formulations. Every drop is crafted with precision.',
-    productName: 'Shop All',
-    price: 'Explore Collection',
-    mediaUrl: video1,
-    color: '#1F4D3A',
-    duration: 8100
-  }
 ];
 
 // Premium smooth animations with subtle zoom-in
